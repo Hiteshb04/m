@@ -18,6 +18,7 @@ connectDB();
 
 //Routes files
 const bootcamps = require('./Routes/bootcamps')
+const courses = require('./Routes/courses')
 
 //body parser
 app.use(express.json());
@@ -31,10 +32,10 @@ if(process.env.NODE_ENV === 'development'){
 
 //Mount router
 app.use('/api/v1/bootcamps',bootcamps);
+app.use('/api/v1/courses',courses);
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000
-
 
 
 const server = app.listen(PORT,()=>{
